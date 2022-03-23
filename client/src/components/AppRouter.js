@@ -3,9 +3,11 @@ import {Route, Routes} from "react-router-dom";
 import {authRoutes, publicRoutes} from "../routes";
 import Shop from "../pages/Shop";
 import {Context} from "../index";
+import {observer} from "mobx-react-lite";
 
-const AppRouter = () => {
+const AppRouter = observer(() => {
   const {user} = useContext(Context)
+
 
   return (
     <div>
@@ -17,10 +19,10 @@ const AppRouter = () => {
           <Route path={path} element={Component} exact key={path}/>
         )}
         //redirect on incorrect path
-        <Route path="*" element={<Shop/>}/>
+        {/*<Route path="*" element={<Shop/>}/>*/}
       </Routes>
     </div>
   );
-};
+});
 
 export default AppRouter;

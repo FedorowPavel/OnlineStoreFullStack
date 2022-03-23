@@ -10,7 +10,7 @@ const DeviceItem = ({device}) => {
   return (
     <Col md={4} className="mt-3" onClick={() => navigate(DEVICE_ROUTE + '/' + device.id)}>
       <Card style={{width: 150, cursor: 'pointer'}} border={"gray"}>
-        <Image src={device.img} width={150} height={150}/>
+        <Image src={process.env.REACT_APP_API_URL + device.ing} width={150} height={150}/>
         <div>
           <div className="text-black-50">
             samsung
